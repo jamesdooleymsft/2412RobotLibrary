@@ -1,7 +1,7 @@
 package com.robototes.math;
 
 /**
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -14,7 +14,7 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 
 	/**
 	 * Creates an InterpolatingDouble with a value
-	 * 
+	 *
 	 * @param value value for the InterpolatingDoubles
 	 */
 	public InterpolatingDouble(Double value) {
@@ -23,7 +23,7 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 
 	@Override
 	public InterpolatingDouble add(InterpolatingDouble other) {
-		return new InterpolatingDouble(this.value + other.value);
+		return new InterpolatingDouble(value + other.value);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 
 	@Override
 	public InterpolatingDouble divide(InterpolatingDouble other) {
-		return new InterpolatingDouble(this.value / other.value);
+		return new InterpolatingDouble(value / other.value);
 	}
 
 	@Override
@@ -61,11 +61,15 @@ public class InterpolatingDouble implements Interpolable<InterpolatingDouble>, I
 
 	@Override
 	public InterpolatingDouble multiply(InterpolatingDouble other) {
-		return new InterpolatingDouble(this.value * other.value);
+		return new InterpolatingDouble(value * other.value);
 	}
 
 	@Override
 	public InterpolatingDouble subtract(InterpolatingDouble other) {
-		return new InterpolatingDouble(this.value - other.value);
+		return new InterpolatingDouble(value - other.value);
+	}
+
+	public Double value() {
+		return this.value;
 	}
 }

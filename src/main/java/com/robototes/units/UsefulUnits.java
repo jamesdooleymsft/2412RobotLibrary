@@ -8,7 +8,7 @@ import com.robototes.utils.StringUtils;
 public class UsefulUnits {
 	/**
 	 * Representation of volts in the program
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -25,16 +25,16 @@ public class UsefulUnits {
 
 		/**
 		 * Creates a voltage with a volt value
-		 * 
+		 *
 		 * @param value the voltage
 		 */
 		public Voltage(double value) {
-			this.voltage = value;
+			voltage = value;
 		}
 
 		/**
 		 * Creates a voltage with any unit
-		 * 
+		 *
 		 * @param value    volts of the unit
 		 * @param unitType type of the unit
 		 */
@@ -44,7 +44,7 @@ public class UsefulUnits {
 
 		@Override
 		public Voltage add(Voltage other) {
-			return new Voltage(this.voltage + other.voltage);
+			return new Voltage(voltage + other.voltage);
 		}
 
 		@Override
@@ -54,7 +54,7 @@ public class UsefulUnits {
 
 		@Override
 		public Voltage divide(Voltage other) {
-			return new Voltage(this.voltage / other.voltage);
+			return new Voltage(voltage / other.voltage);
 		}
 
 		@Override
@@ -66,7 +66,7 @@ public class UsefulUnits {
 		}
 
 		public boolean equals(Voltage other) {
-			return MathUtils.epsilonEquals(this.getValue(), other.getValue(), 0.00001);
+			return MathUtils.epsilonEquals(getValue(), other.getValue(), 0.00001);
 			// Epsilion is too big with conversion values
 		}
 
@@ -82,17 +82,17 @@ public class UsefulUnits {
 
 		@Override
 		public Voltage multiply(Voltage other) {
-			return new Voltage(this.voltage * other.voltage);
+			return new Voltage(voltage * other.voltage);
 		}
 
 		@Override
 		public Voltage subtract(Voltage other) {
-			return new Voltage(this.voltage - other.voltage);
+			return new Voltage(voltage - other.voltage);
 		}
 
 		@Override
 		public String toString() {
-			return StringUtils.getFormattedValue(getValue(), 4) + this.getUnit();
+			return StringUtils.getFormattedValue(getValue(), 4) + getUnit();
 		}
 	}
 }

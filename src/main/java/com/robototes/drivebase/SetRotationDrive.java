@@ -4,6 +4,7 @@ import com.robototes.units.Rotations;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+@Deprecated
 public class SetRotationDrive<T extends IDrivebase> extends Command {
 
 	T drivebase;

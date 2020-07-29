@@ -13,7 +13,7 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testCalculateRatio() {
-		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 
 		assertEquals("Double ratio calculation", inchToRotation.calculateRatio(5), 50, MathUtils.EPSILON);
@@ -23,7 +23,7 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testCalculateReverseRatio() {
-		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 
 		assertEquals("Double reverse ratio calculation", inchToRotation.calculateReverseRatio(5), 0.5,
@@ -34,10 +34,10 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testGetInverseRatio() {
-		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 
-		InterUnitRatio<RotationUnits, DistanceUnits> rotationToInch = new InterUnitRatio<RotationUnits, DistanceUnits>(
+		InterUnitRatio<RotationUnits, DistanceUnits> rotationToInch = new InterUnitRatio<>(
 				RotationUnits.ROTATION, 0.1, DistanceUnits.INCH);
 
 		assertEquals("Inverse ratio", inchToRotation.getInverseRatio(), rotationToInch);
@@ -45,7 +45,7 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testInterUnitRatio() {
-		InterUnitRatio<DistanceUnits, RotationUnits> ratio = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> ratio = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 		assertEquals("Check ratio is correct", ratio.getRatio(), 10, MathUtils.EPSILON);
 		assertEquals("Check to is correct", ratio.getTo(), RotationUnits.ROTATION.getUnit());
@@ -54,16 +54,16 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testInterUnitRatioFromTwoRatios() {
-		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 
-		InterUnitRatio<RotationUnits, TimeUnits> rotationToSeconds = new InterUnitRatio<RotationUnits, TimeUnits>(
+		InterUnitRatio<RotationUnits, TimeUnits> rotationToSeconds = new InterUnitRatio<>(
 				RotationUnits.ROTATION, 0.5, TimeUnits.SECOND);
 
-		InterUnitRatio<DistanceUnits, TimeUnits> inchToSeconds = new InterUnitRatio<DistanceUnits, TimeUnits>(
+		InterUnitRatio<DistanceUnits, TimeUnits> inchToSeconds = new InterUnitRatio<>(
 				inchToRotation, rotationToSeconds);
 
-		InterUnitRatio<DistanceUnits, TimeUnits> inchToSecondsManual = new InterUnitRatio<DistanceUnits, TimeUnits>(
+		InterUnitRatio<DistanceUnits, TimeUnits> inchToSecondsManual = new InterUnitRatio<>(
 				DistanceUnits.INCH, 5, TimeUnits.SECOND);
 
 		assertEquals("Ratios are the same", inchToSeconds, inchToSecondsManual);
@@ -71,7 +71,7 @@ public class InterUnitRatioTest {
 
 	@Test
 	public void testToString() {
-		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<DistanceUnits, RotationUnits>(
+		InterUnitRatio<DistanceUnits, RotationUnits> inchToRotation = new InterUnitRatio<>(
 				DistanceUnits.INCH, 10, RotationUnits.ROTATION);
 
 		assertEquals("toString", inchToRotation.toString(), "10in:1rot");

@@ -16,7 +16,7 @@ public class ArrayUtils {
 		int counter = 0;
 		String string = "";
 		for (T value : array) {
-			string += "[" + (counter++) + "]: " + value;
+			string += "[" + counter++ + "]: " + value;
 			if (counter != array.length) {
 				string += ", ";
 			}

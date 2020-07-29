@@ -28,8 +28,8 @@ public class TimeTest {
 
 		assertEquals("sec to millis", oneMeter.convertTo(TimeUnits.MILLISECOND), 1000, epsilon);
 		assertEquals("sec to day", oneMeter.convertTo(TimeUnits.DAY), 1d / (60 * 60 * 24), epsilon);
-		assertEquals("sec to hour", oneMeter.convertTo(TimeUnits.HOUR), 1d / (3600d), epsilon);
-		assertEquals("sec to minute", oneMeter.convertTo(TimeUnits.MINUTE), 1d / (60d), epsilon);
+		assertEquals("sec to hour", oneMeter.convertTo(TimeUnits.HOUR), 1d / 3600d, epsilon);
+		assertEquals("sec to minute", oneMeter.convertTo(TimeUnits.MINUTE), 1d / 60d, epsilon);
 
 	}
 

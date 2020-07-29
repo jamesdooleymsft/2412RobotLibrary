@@ -1,9 +1,13 @@
 com.robototes
 com.robototes.control
 com.robototes.drivebase
+com.robototes.logging
+com.robototes.logging.shuffleboard
 com.robototes.math
 com.robototes.motors
 com.robototes.PIDControls
 com.robototes.sensors
+com.robototes.subsystem
+com.robototes.subsystem.simple
 com.robototes.units
 com.robototes.utils

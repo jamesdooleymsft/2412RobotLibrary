@@ -16,7 +16,7 @@ public class DefaultUnit implements IUnit<DefaultUnit> {
 
 	@Override
 	public DefaultUnit add(DefaultUnit other) {
-		return new DefaultUnit(this.value + other.value, this.unit);
+		return new DefaultUnit(value + other.value, unit);
 	}
 
 	@Override
@@ -26,11 +26,11 @@ public class DefaultUnit implements IUnit<DefaultUnit> {
 
 	@Override
 	public DefaultUnit divide(DefaultUnit other) {
-		return new DefaultUnit(this.value / other.value, this.unit);
+		return new DefaultUnit(value / other.value, unit);
 	}
 
 	public boolean equals(IUnit<?> other) {
-		return MathUtils.epsilonEquals(value, other.getValue(), 0.00001) && this.unit.equals(other.getUnit());
+		return MathUtils.epsilonEquals(value, other.getValue(), 0.00001) && unit.equals(other.getUnit());
 		// Epsilion is too big with conversion values
 	}
 
@@ -54,17 +54,17 @@ public class DefaultUnit implements IUnit<DefaultUnit> {
 
 	@Override
 	public DefaultUnit multiply(DefaultUnit other) {
-		return new DefaultUnit(this.value * other.value, this.unit);
+		return new DefaultUnit(value * other.value, unit);
 	}
 
 	@Override
 	public DefaultUnit subtract(DefaultUnit other) {
-		return new DefaultUnit(this.value - other.value, this.unit);
+		return new DefaultUnit(value - other.value, unit);
 	}
 
 	@Override
 	public String toString() {
-		return StringUtils.getFormattedValue(getValue(), 4) + this.getUnit();
+		return StringUtils.getFormattedValue(getValue(), 4) + getUnit();
 	}
 
 }

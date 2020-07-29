@@ -6,9 +6,9 @@ import com.robototes.units.UnitTypes.IUnitType;
 import com.robototes.utils.StringUtils;
 
 /**
- * 
+ *
  * Forms a ratio between two different unit types, ie rotations to meters
- * 
+ *
  * @author Eli Orona
  *
  * @param <K> Unit type one
@@ -26,7 +26,7 @@ public class InterUnitRatio<K extends IUnitType<?>, V extends IUnitType<?>> impl
 	/**
 	 * Creates a ratio based on two other interunit ratios, ie rotations:meters and
 	 * meters:time -> rotations:time
-	 * 
+	 *
 	 * @param ratioOne First ratio
 	 * @param ratioTwo Second Ratio
 	 */
@@ -35,7 +35,7 @@ public class InterUnitRatio<K extends IUnitType<?>, V extends IUnitType<?>> impl
 		this.from = ratioOne.getFrom();
 		this.fromType = ratioOne.fromType;
 
-		this.ratio = (ratioOne.ratio * ratioTwo.ratio);
+		this.ratio = ratioOne.ratio * ratioTwo.ratio;
 
 		this.toType = ratioTwo.toType;
 		this.to = ratioTwo.getTo();
@@ -44,7 +44,7 @@ public class InterUnitRatio<K extends IUnitType<?>, V extends IUnitType<?>> impl
 
 	/**
 	 * Creates a ratio based on two types
-	 * 
+	 *
 	 * @param fromType From type
 	 * @param ratio    ratio between the two types
 	 * @param toType   To type
@@ -94,7 +94,7 @@ public class InterUnitRatio<K extends IUnitType<?>, V extends IUnitType<?>> impl
 
 	@Override
 	public Ratio<IUnit<?>> getInverseRatio() {
-		return new InterUnitRatio<V, K>(toType, 1d / ratio, fromType);
+		return new InterUnitRatio<>(toType, 1d / ratio, fromType);
 	}
 
 	@Override

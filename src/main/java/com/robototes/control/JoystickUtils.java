@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 
 /**
  * Some utils that help with a joystick
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -14,7 +14,7 @@ public class JoystickUtils {
 
 	/**
 	 * Cubes the values of the joystick
-	 * 
+	 *
 	 * @param stick The joystick
 	 * @return an array, [X, Y, Twist]
 	 */

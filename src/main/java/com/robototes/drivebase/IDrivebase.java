@@ -7,6 +7,7 @@ import com.robototes.units.Rotations;
 
 import edu.wpi.first.wpilibj.Joystick;
 
+@Deprecated
 public interface IDrivebase {
 
 	public enum ControlMode {

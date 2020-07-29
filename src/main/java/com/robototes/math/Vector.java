@@ -2,6 +2,12 @@ package com.robototes.math;
 
 import static java.lang.Math.atan2;
 
+/**
+ * A vector for the program, can be a point or a heading and magnitude
+ *
+ * @author Eli Orona
+ *
+ */
 public class Vector {
 
 	/**
@@ -28,28 +34,28 @@ public class Vector {
 	 * Constructs a vector with all values at 0
 	 */
 	public Vector() {
-		this.x = 0;
-		this.y = 0;
-		this.length = 0;
-		this.angle = 0;
+		x = 0;
+		y = 0;
+		length = 0;
+		angle = 0;
 	}
 
 	/**
 	 * Constructs a vector with length one and a given angle
-	 * 
+	 *
 	 * @param angle angle of the vector in radians
 	 */
 	public Vector(double angle) {
 		this.angle = angle;
-		this.length = 1;
+		length = 1;
 
-		this.x = Math.cos(angle);
-		this.y = Math.sin(angle);
+		x = Math.cos(angle);
+		y = Math.sin(angle);
 	}
 
 	/**
 	 * Constructs a vector with x and y values
-	 * 
+	 *
 	 * @param x x value of the vector
 	 * @param y y value of the vector
 	 */
@@ -57,13 +63,13 @@ public class Vector {
 		this.x = x;
 		this.y = y;
 
-		this.length = MathUtils.distance(x, y);
-		this.angle = atan2(y, x);
+		length = MathUtils.distance(x, y);
+		angle = atan2(y, x);
 	}
 
 	/**
 	 * Adds x and y to the vector, returning a new vector
-	 * 
+	 *
 	 * @param x x value to add
 	 * @param y y value to add
 	 * @return a new Vector added with the x and y values
@@ -74,7 +80,7 @@ public class Vector {
 
 	/**
 	 * Adds two vectors
-	 * 
+	 *
 	 * @param other The vector to add
 	 * @return The sum of the two vectors
 	 */
@@ -84,35 +90,35 @@ public class Vector {
 
 	/**
 	 * Finds the angle between two vectors
-	 * 
+	 *
 	 * @param other Vector to find the angle between
 	 * @return A radian value for the angle between two vectors
 	 */
 	public double angleBetween(Vector other) {
-		return atan2(other.y, other.x) - atan2(this.y, this.x);
+		return atan2(other.y, other.x) - atan2(y, x);
 	}
 
 	/**
 	 * Scales a vector through division
-	 * 
+	 *
 	 * @param scale The value to divide the vector by
 	 * @return The vector after being divided
 	 */
 	public Vector divide(double scale) {
-		this.x /= scale;
-		this.y /= scale;
-		this.length /= scale;
+		x /= scale;
+		y /= scale;
+		length /= scale;
 		return this;
 	}
 
 	/**
 	 * The dot product of two vectors
-	 * 
+	 *
 	 * @param other The vector to calculated the dot product with
 	 * @return A double representing the dot product
 	 */
 	public double dot(Vector other) {
-		return this.x * other.x + this.y * other.y;
+		return x * other.x + y * other.y;
 	}
 
 	@Override
@@ -131,20 +137,20 @@ public class Vector {
 
 	/**
 	 * Scales a vector through multiplication
-	 * 
+	 *
 	 * @param scale The value to multiply the vector by
 	 * @return The vector after being multiplied
 	 */
 	public Vector multiply(double scale) {
-		this.x *= scale;
-		this.y *= scale;
-		this.length *= scale;
+		x *= scale;
+		y *= scale;
+		length *= scale;
 		return this;
 	}
 
 	/**
 	 * Subtracts x and y values
-	 * 
+	 *
 	 * @param x x value to subtract
 	 * @param y y value to subtract
 	 * @return a new Vector subtracted with the x and y values
@@ -155,7 +161,7 @@ public class Vector {
 
 	/**
 	 * Subtracts two vectors
-	 * 
+	 *
 	 * @param other The vector to subtract
 	 * @return The difference of two vectors
 	 */

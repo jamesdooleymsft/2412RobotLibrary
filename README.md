@@ -1,6 +1,6 @@
 <p align="center">
    Current test status: 
-  <a href="https://github.com/robototes/2412RobotLibrary"><img alt="Test status" src="https://github.com/robototes/2412RobotLibrary/workflows/JUnit Tests/badge.svg"></a>
+  <a href="https://github.com/robototes/2412RobotLibrary"><img alt="Test status" src="https://github.com/robototes/2412RobotLibrary/workflows/Gradle test/badge.svg"></a>
 </p>
 
 # 2412RobotLibrary

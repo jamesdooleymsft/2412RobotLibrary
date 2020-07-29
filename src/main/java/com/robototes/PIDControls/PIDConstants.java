@@ -1,13 +1,13 @@
 package com.robototes.PIDControls;
 
 /**
- * 
+ *
  * A wrapper class for a list of PID Constants, making it easy to apply the same
  * constants in many places, or switch during run time.
- * 
+ *
  * @author Eli Orona
- * 
- * 
+ *
+ *
  */
 public class PIDConstants {
 	/**
@@ -31,7 +31,7 @@ public class PIDConstants {
 
 	/**
 	 * Creates a PIDConstants with just a P value
-	 * 
+	 *
 	 * @param k_P P value
 	 */
 	public PIDConstants(double k_P) {
@@ -40,7 +40,7 @@ public class PIDConstants {
 
 	/**
 	 * Creates a PIDConstants with P and D values
-	 * 
+	 *
 	 * @param k_P P value
 	 * @param k_D D value
 	 */
@@ -51,7 +51,7 @@ public class PIDConstants {
 
 	/**
 	 * Creates a PIDConstants with P, I, and D values
-	 * 
+	 *
 	 * @param k_P P value
 	 * @param k_I I value
 	 * @param k_D D value
@@ -64,7 +64,7 @@ public class PIDConstants {
 
 	/**
 	 * Creates a PIDConstants with all values
-	 * 
+	 *
 	 * @param k_P     P value
 	 * @param k_I     I value
 	 * @param k_D     D value
@@ -78,7 +78,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The D value
 	 */
 	public double getK_D() {
@@ -86,7 +86,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The I value
 	 */
 	public double getK_I() {
@@ -94,7 +94,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The Integral Dampening value
 	 */
 	public double getK_IDamp() {
@@ -102,7 +102,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The P value
 	 */
 	public double getK_P() {
@@ -110,7 +110,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param k_D Sets the D value
 	 */
 	public void setK_D(double k_D) {
@@ -118,7 +118,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param k_I Sets the I value
 	 */
 	public void setK_I(double k_I) {
@@ -126,7 +126,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param k_IDamp Sets the Integral Dampening value
 	 */
 	public void setK_IDamp(double k_IDamp) {
@@ -134,7 +134,7 @@ public class PIDConstants {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param k_P Sets the P value
 	 */
 	public void setK_P(double k_P) {

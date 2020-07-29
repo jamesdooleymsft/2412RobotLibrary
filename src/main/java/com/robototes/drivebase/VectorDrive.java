@@ -7,6 +7,7 @@ import com.robototes.units.UnitTypes.RotationUnits;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
+@Deprecated
 public class VectorDrive extends CommandGroup {
 	public <T extends IDrivebase> VectorDrive(T drivebase, Vector vect, double deadband) {
 		addSequential(new RotateBy(drivebase, new Rotations(vect.angle, RotationUnits.RADIAN), deadband));

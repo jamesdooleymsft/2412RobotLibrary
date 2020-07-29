@@ -4,7 +4,7 @@ import com.robototes.math.MathUtils;
 
 /**
  * A calculator for a PID system.
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -36,7 +36,7 @@ public class PIDController {
 	public PIDConstants constants;
 
 	/**
-	 * 
+	 *
 	 * @param constants PID Constants for the Controller
 	 */
 	public PIDController(PIDConstants constants) {
@@ -44,16 +44,16 @@ public class PIDController {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The constants used for the PID Controller
 	 */
 	public PIDConstants getConstants() {
-		return this.constants;
+		return constants;
 	}
 
 	/**
 	 * Calculated the output of the PID function with the constants
-	 * 
+	 *
 	 * @param error    The error of the PID System
 	 * @param timestep The timestep between two calculations
 	 * @return A double value for the output of the function
@@ -81,7 +81,7 @@ public class PIDController {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param constants Sets the constants of the controller
 	 */
 	public void setConstants(PIDConstants constants) {
@@ -90,7 +90,7 @@ public class PIDController {
 
 	/**
 	 * Sets the output range
-	 * 
+	 *
 	 * @param min Minimum output
 	 * @param max Maximum output
 	 */

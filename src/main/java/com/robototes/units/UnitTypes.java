@@ -4,7 +4,7 @@ import com.robototes.units.UsefulUnits.Voltage;
 
 /**
  * All the unit types are housed within this class
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -12,7 +12,7 @@ public class UnitTypes {
 
 	/**
 	 * List of different distance units
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -74,12 +74,12 @@ public class UnitTypes {
 
 		@Override
 		public UnitRatio<Distance> getRatio() {
-			return new UnitRatio<Distance>(conversionValue, getUnit(), "m");
+			return new UnitRatio<>(conversionValue, getUnit(), "m");
 		}
 
 		@Override
 		public UnitRatio<Distance> getRatio(DistanceUnits other) {
-			return new UnitRatio<Distance>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
+			return new UnitRatio<>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
 		}
 
 		@Override
@@ -90,33 +90,33 @@ public class UnitTypes {
 	}
 
 	/**
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 * @param <T> The Unit type
 	 */
 	public interface IUnitType<T extends IUnitType<?>> {
 		/**
-		 * 
+		 *
 		 * @return The main unit of the unit type
 		 */
 		T getMainUnit();
 
 		/**
-		 * 
+		 *
 		 * @return the ratio from this unit to the main unit of the enum
 		 */
 		UnitRatio<?> getRatio();
 
 		/**
-		 * 
+		 *
 		 * @param other The other unit
 		 * @return Finds the ratio between two unitss
 		 */
 		UnitRatio<?> getRatio(T other);
 
 		/**
-		 * 
+		 *
 		 * @return The label of the unit
 		 */
 		String getUnit();
@@ -124,7 +124,7 @@ public class UnitTypes {
 
 	/**
 	 * List of different rotation/angle units
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -166,12 +166,12 @@ public class UnitTypes {
 
 		@Override
 		public UnitRatio<Rotations> getRatio() {
-			return new UnitRatio<Rotations>(conversionValue, getUnit(), "rot");
+			return new UnitRatio<>(conversionValue, getUnit(), "rot");
 		}
 
 		@Override
 		public UnitRatio<Rotations> getRatio(RotationUnits other) {
-			return new UnitRatio<Rotations>(getRatio(), (UnitRatio<?>) (other.getRatio()).getInverseRatio());
+			return new UnitRatio<>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
 		}
 
 		@Override
@@ -182,7 +182,7 @@ public class UnitTypes {
 
 	/**
 	 * List of different time units
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -232,12 +232,12 @@ public class UnitTypes {
 
 		@Override
 		public UnitRatio<Time> getRatio() {
-			return new UnitRatio<Time>(conversionValue, getUnit(), "s");
+			return new UnitRatio<>(conversionValue, getUnit(), "s");
 		}
 
 		@Override
 		public UnitRatio<Time> getRatio(TimeUnits other) {
-			return new UnitRatio<Time>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
+			return new UnitRatio<>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
 		}
 
 		@Override
@@ -249,7 +249,7 @@ public class UnitTypes {
 
 	/**
 	 * List of different voltage units
-	 * 
+	 *
 	 * @author Eli Orona
 	 *
 	 */
@@ -291,12 +291,12 @@ public class UnitTypes {
 
 		@Override
 		public UnitRatio<Voltage> getRatio() {
-			return new UnitRatio<Voltage>(conversionValue, getUnit(), "V");
+			return new UnitRatio<>(conversionValue, getUnit(), "V");
 		}
 
 		@Override
 		public UnitRatio<Voltage> getRatio(VoltageUnits other) {
-			return new UnitRatio<Voltage>(getRatio(), (UnitRatio<?>) (other.getRatio()).getInverseRatio());
+			return new UnitRatio<>(getRatio(), (UnitRatio<?>) other.getRatio().getInverseRatio());
 		}
 
 		@Override

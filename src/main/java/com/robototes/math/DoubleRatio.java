@@ -3,7 +3,7 @@ package com.robototes.math;
 import com.robototes.utils.StringUtils;
 
 /**
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -26,7 +26,7 @@ public class DoubleRatio implements Ratio<Double> {
 
 	/**
 	 * Creates a double ratio from a conversion value
-	 * 
+	 *
 	 * @param ratio Value of the ratio
 	 * @param from  From type
 	 * @param to    To type
@@ -39,14 +39,14 @@ public class DoubleRatio implements Ratio<Double> {
 
 	/**
 	 * Creates a double ratio based on two other ratios
-	 * 
+	 *
 	 * @param firstRatio  First ratio
 	 * @param secondRatio Second Ratio
 	 */
 	public DoubleRatio(Ratio<?> firstRatio, Ratio<?> secondRatio) {
-		this.ratio = (firstRatio.getRatio() * secondRatio.getRatio());
-		this.from = firstRatio.getFrom();
-		this.to = secondRatio.getTo();
+		ratio = firstRatio.getRatio() * secondRatio.getRatio();
+		from = firstRatio.getFrom();
+		to = secondRatio.getTo();
 	}
 
 	@Override

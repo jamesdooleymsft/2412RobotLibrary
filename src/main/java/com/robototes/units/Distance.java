@@ -7,7 +7,7 @@ import com.robototes.utils.StringUtils;
 
 /**
  * A representation of distance in the program. Default unit is the meter.
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -24,16 +24,16 @@ public class Distance implements IUnit<Distance> {
 
 	/**
 	 * Creates a distance with a meter value
-	 * 
+	 *
 	 * @param value the length of the meter distance
 	 */
 	public Distance(double value) {
-		this.distance = value;
+		distance = value;
 	}
 
 	/**
 	 * Creates a distance with any unit
-	 * 
+	 *
 	 * @param value    length of the unit
 	 * @param unitType type of the unit
 	 */
@@ -43,7 +43,7 @@ public class Distance implements IUnit<Distance> {
 
 	@Override
 	public Distance add(Distance other) {
-		return new Distance(this.distance + other.distance);
+		return new Distance(distance + other.distance);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class Distance implements IUnit<Distance> {
 
 	@Override
 	public Distance divide(Distance other) {
-		return new Distance(this.distance / other.distance);
+		return new Distance(distance / other.distance);
 	}
 
 	public boolean equals(Distance other) {
@@ -80,16 +80,16 @@ public class Distance implements IUnit<Distance> {
 
 	@Override
 	public Distance multiply(Distance other) {
-		return new Distance(this.distance * other.distance);
+		return new Distance(distance * other.distance);
 	}
 
 	@Override
 	public Distance subtract(Distance other) {
-		return new Distance(this.distance - other.distance);
+		return new Distance(distance - other.distance);
 	}
 
 	@Override
 	public String toString() {
-		return StringUtils.getFormattedValue(getValue(), 4) + this.getUnit();
+		return StringUtils.getFormattedValue(getValue(), 4) + getUnit();
 	}
 }

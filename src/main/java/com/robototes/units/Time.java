@@ -7,7 +7,7 @@ import com.robototes.utils.StringUtils;
 
 /**
  * A representation of time in the program
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -24,16 +24,16 @@ public class Time implements IUnit<Time> {
 	public double time;
 
 	/**
-	 * 
+	 *
 	 * @param value Creates a Time with a number of seconds
 	 */
 	public Time(double value) {
-		this.time = value;
+		time = value;
 	}
 
 	/**
 	 * Creates time with a given unit
-	 * 
+	 *
 	 * @param value    The value of the time
 	 * @param unitType the type of time
 	 */
@@ -43,7 +43,7 @@ public class Time implements IUnit<Time> {
 
 	@Override
 	public Time add(Time other) {
-		return new Time(this.time + other.time);
+		return new Time(time + other.time);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class Time implements IUnit<Time> {
 
 	@Override
 	public Time divide(Time other) {
-		return new Time(this.time / other.time);
+		return new Time(time / other.time);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class Time implements IUnit<Time> {
 	}
 
 	public boolean equals(Time other) {
-		return MathUtils.epsilonEquals(this.getValue(), other.getValue(), 0.00001);
+		return MathUtils.epsilonEquals(getValue(), other.getValue(), 0.00001);
 		// Epsilion is too big with conversion values
 	}
 
@@ -81,18 +81,18 @@ public class Time implements IUnit<Time> {
 
 	@Override
 	public Time multiply(Time other) {
-		return new Time(this.time * other.time);
+		return new Time(time * other.time);
 
 	}
 
 	@Override
 	public Time subtract(Time other) {
-		return new Time(this.time - other.time);
+		return new Time(time - other.time);
 	}
 
 	@Override
 	public String toString() {
-		return StringUtils.getFormattedValue(getValue(), 4) + this.getUnit();
+		return StringUtils.getFormattedValue(getValue(), 4) + getUnit();
 	}
 
 }

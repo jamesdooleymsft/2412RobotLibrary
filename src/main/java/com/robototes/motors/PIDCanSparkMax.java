@@ -10,12 +10,13 @@ import com.robototes.units.Time;
 import com.robototes.units.UnitTypes.TimeUnits;
 
 /**
- * A wrapper class for CANSparkMax by Revrobotics. Allows for PID Control of the
+ * A wrapper class for CANSparkMax by RevRobotics. Allows for PID Control of the
  * motor
- * 
+ *
  * @author Eli Orona
  *
  */
+@Deprecated
 public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<SparkMaxRotations> {
 
 	private CANEncoder encoder;
@@ -24,9 +25,9 @@ public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<Sp
 
 	public PIDCanSparkMax(int deviceID, MotorType type, PIDConstants constants) {
 		super(deviceID, type);
-		this.encoder = this.getEncoder();
-		this.controller = new PIDController(constants);
-		this.controller.setMinMax(-0.5, 0.5);
+		encoder = this.getEncoder();
+		controller = new PIDController(constants);
+		controller.setMinMax(-0.5, 0.5);
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<Sp
 
 	@Override
 	public void addRotations(SparkMaxRotations rotations) {
-		this.setPoint = (SparkMaxRotations) this.setPoint.add(rotations);
+		setPoint = (SparkMaxRotations) setPoint.add(rotations);
 	}
 
 	@Override
@@ -52,23 +53,23 @@ public class PIDCanSparkMax extends CANSparkMax implements PIDMotorController<Sp
 
 	@Override
 	public void setRotations(SparkMaxRotations rotations) {
-		this.setPoint = rotations;
+		setPoint = rotations;
 	}
 
 	@Override
 	public void setSpeed(double speed) {
-		this.set(speed);
+		set(speed);
 	}
 
 	@Override
 	public double usePIDOutput() {
-		return usePIDOutput(new Time(5, TimeUnits.MILLISECOND)); // loop time of robot
+		return usePIDOutput(new Time(50, TimeUnits.MILLISECOND)); // loop time of robot
 	}
 
 	@Override
 	public double usePIDOutput(Time timestep) {
 		double output = controller.getOutput(setPoint.subtract(getRotations()).getValue(), timestep.getValue());
-		this.set(output);
+		set(output);
 		return output;
 	}
 

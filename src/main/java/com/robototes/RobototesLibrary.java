@@ -10,7 +10,7 @@ public class RobototesLibrary {
 	private static String version = "0.1";
 
 	/**
-	 * 
+	 *
 	 * @return The current version of the library
 	 */
 	public static String getVersion() {

@@ -4,6 +4,7 @@ import com.robototes.units.Distance;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+@Deprecated
 public class UseDistanceDrive<T extends IDrivebase> extends Command {
 
 	T drivebase;

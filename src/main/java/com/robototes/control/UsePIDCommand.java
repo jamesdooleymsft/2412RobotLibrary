@@ -4,6 +4,7 @@ import com.robototes.units.IUnit;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+@Deprecated
 public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
 	private PIDSubsystem<T> PIDSubsystem;
@@ -23,7 +24,12 @@ public class UsePIDCommand<T extends IUnit<T>> extends Command {
 
 	@Override
 	protected boolean isFinished() {
-		return Math.abs(PIDSubsystem.getError().subtract(finalPosition).getValue()) < howCloseMustItBe;
+		boolean done = false;
+		if (PIDSubsystem.getError() != null) {
+			done = Math.abs(PIDSubsystem.getError().subtract(finalPosition).getValue()) < howCloseMustItBe;
+		}
+
+		return done;
 	}
 
 }

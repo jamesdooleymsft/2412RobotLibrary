@@ -7,7 +7,7 @@ import com.robototes.utils.StringUtils;
 
 /**
  * A ratio between different types of the same unit
- * 
+ *
  * @author Eli Orona
  *
  * @param <T> The Unit for the ratio
@@ -30,9 +30,9 @@ public class UnitRatio<T extends IUnit<?>> implements Ratio<IUnit<?>> {
 	public String to;
 
 	/**
-	 * 
+	 *
 	 * Creates a ratio between the two different unit types
-	 * 
+	 *
 	 * @param ratio value of the ratio
 	 * @param from  the from unit
 	 * @param to    the to unit
@@ -44,9 +44,9 @@ public class UnitRatio<T extends IUnit<?>> implements Ratio<IUnit<?>> {
 	}
 
 	/**
-	 * 
+	 *
 	 * Creates a ratio between the two different unit labels
-	 * 
+	 *
 	 * @param ratio value of the ratio
 	 * @param from  the from unit
 	 * @param to    the to unit
@@ -59,12 +59,12 @@ public class UnitRatio<T extends IUnit<?>> implements Ratio<IUnit<?>> {
 
 	/**
 	 * Creates a ratio between two different ratios
-	 * 
+	 *
 	 * @param firstRatio First ratio
 	 * @param ratio2     Second Ratio
 	 */
 	public UnitRatio(UnitRatio<?> firstRatio, UnitRatio<?> ratio2) {
-		this.ratio = (firstRatio.ratio * ratio2.getRatio());
+		this.ratio = firstRatio.ratio * ratio2.getRatio();
 		this.from = firstRatio.from;
 		this.to = ratio2.getTo();
 	}

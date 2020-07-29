@@ -7,7 +7,7 @@ import com.robototes.utils.StringUtils;
 
 /**
  * A representation of rotations in the program
- * 
+ *
  * @author Eli Orona
  *
  */
@@ -24,16 +24,16 @@ public class Rotations implements IUnit<Rotations> {
 	public double rotations;
 
 	/**
-	 * 
+	 *
 	 * @param value Creates a Rotation with a number of rotations
 	 */
 	public Rotations(double value) {
-		this.rotations = value;
+		rotations = value;
 	}
 
 	/**
 	 * Creates a Rotation with a given type
-	 * 
+	 *
 	 * @param value    Value for the type
 	 * @param unitType the type of rotation unit
 	 */
@@ -43,7 +43,7 @@ public class Rotations implements IUnit<Rotations> {
 
 	@Override
 	public Rotations add(Rotations other) {
-		return new Rotations(this.rotations + other.rotations);
+		return new Rotations(rotations + other.rotations);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class Rotations implements IUnit<Rotations> {
 
 	@Override
 	public Rotations divide(Rotations other) {
-		return new Rotations(this.rotations / other.rotations);
+		return new Rotations(rotations / other.rotations);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class Rotations implements IUnit<Rotations> {
 	}
 
 	public boolean equals(Rotations other) {
-		return MathUtils.epsilonEquals(this.getValue(), other.getValue(), 0.00001);
+		return MathUtils.epsilonEquals(getValue(), other.getValue(), 0.00001);
 		// Epsilion is too big with conversion values
 	}
 
@@ -81,17 +81,17 @@ public class Rotations implements IUnit<Rotations> {
 
 	@Override
 	public Rotations multiply(Rotations other) {
-		return new Rotations(this.rotations * other.rotations);
+		return new Rotations(rotations * other.rotations);
 
 	}
 
 	@Override
 	public Rotations subtract(Rotations other) {
-		return new Rotations(this.rotations - other.rotations);
+		return new Rotations(rotations - other.rotations);
 	}
 
 	@Override
 	public String toString() {
-		return StringUtils.getFormattedValue(getValue(), 4) + this.getUnit();
+		return StringUtils.getFormattedValue(getValue(), 4) + getUnit();
 	}
 }

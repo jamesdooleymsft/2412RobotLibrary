@@ -5,15 +5,15 @@ import com.robototes.units.UnitTypes.IUnitType;
 
 /**
  * An interface to make all units have stuff in common
- * 
+ *
  * @author Eli Orona
  *
  * @param <T> The class of the unit
  */
 public interface IUnit<T extends IUnit<?>> extends Operable<T> {
 	/**
-	 * 
-	 * @param <K>      UnitType of the unit
+	 *
+	 * @param          <K> UnitType of the unit
 	 * @param unitType New unit type
 	 * @return value of the unit converted to the new unit.
 	 */
@@ -27,13 +27,13 @@ public interface IUnit<T extends IUnit<?>> extends Operable<T> {
 	T divide(T other);
 
 	/**
-	 * 
+	 *
 	 * @return The label of the unit
 	 */
 	public String getUnit();
 
 	/**
-	 * 
+	 *
 	 * @return the value of the unit
 	 */
 	public double getValue();

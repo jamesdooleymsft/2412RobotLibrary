@@ -1,7 +1,7 @@
 package com.robototes.math;
 
 /**
- * 
+ *
  * @author Eli Orona
  *
  * @param <T> The type to be interpolated
@@ -9,7 +9,7 @@ package com.robototes.math;
 public interface Interpolable<T> {
 	/**
 	 * Interpolates between two values with a given percentage.
-	 * 
+	 *
 	 * @param other Value to interpolate
 	 * @param t     Percent of interpolation
 	 * @return Interpolated value.
